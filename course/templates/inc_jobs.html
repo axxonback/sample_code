@@ -1,0 +1,49 @@
+{% load staticfiles%}
+{% block jobs %}
+{% for e in exp %}
+	<div class="row">
+		<div class="col-md-4">
+		<h3>{{e.org.employer_name | linebreaks}}</h3>
+		<p>{{e.period | linebreaks}}</p>
+		</div>
+		<div class="col-md-8">
+		<h3>{{e.position | linebreaks}}</h3>
+		<p>{{e.duties | linebreaks}}</p>
+			<div class="row">
+			<div class="col-md-3">
+				<div class="media">
+				<div class="media-left media-middle">
+				<div class="map">
+					<img class="media-object ref maps {{e.classname}}" src={% static "img/pin.png" %} alt="map">
+					<span class="{{e.classname}}"><iframe class="dropdown-menu" src="{{e.org.employer_location}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></span>
+				</div>
+
+
+				</div>
+				<div class="media-body reftext">
+				Moscow, Russia
+				</div>
+				</div>
+			</div>
+
+				{% if e.org.employer_site %}
+				<div class="col-md-4">
+					<div class="media">
+					<div class="media-left media-middle">
+					<a href="{{e.org.employer_site}}">
+					  <img class="media-object ref" src={% static "img/link.png" %} alt="link">
+					</a>
+					</div>
+					<div class="media-body reftext">
+					<a href="{{e.org.employer_site}}" target="blank">{{e.org.employer_site}}</a>
+					</div>
+					</div>
+				</div>
+
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+{% endfor %}
+{% endblock %}

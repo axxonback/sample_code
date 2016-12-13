@@ -1,0 +1,16 @@
+
+<h1>Welcome#index#Rails</h1>
+
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<%= form_tag("/search", method: "get") do %>
+	<%= label_tag(:q, "Search for:") %>
+	<%= text_field_tag(:q) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<%= link_to 'My Blog', controller: 'products'%>
+
+<%= link_to 'My Books', controller: 'books'%>
+
+

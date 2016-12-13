@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles%}
+<head>
+	{% block title %}
+		<!-- <title>Sayapina</title> -->
+	{% endblock %}
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	{% block css %}
+	{% endblock %}
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="shortcut icon" href={% static "img/favicon.ico" %} type="image/png">
+
+	<link href={% static "styles/style.css" %} rel="stylesheet">
+	
+	<meta name="description" content="My very first Django project deployed">
+    <meta name="author" content="Julia Sayapina">
+
+
+</head>
+
+<body>
+	<header class = "container">
+		<div class="row">
+			<a href="../"><img src={% static "img/logo.png" %}></a>
+			{% block menu %}
+				{% include 'inc-menu.html' %}
+			{% endblock %}
+			
+	        {% block caption %}
+	        {% endblock %}
+	    </div>
+	</header>
+	
+	{% block content%}
+	{% endblock%}
+	
+	<footer class="container">
+	    <div class="row">
+	      <p class="col-sm-4">&copy; 2016 Julia Sayapina</p>
+	      <ul class="col-sm-8">
+	        <li class="col-sm-1">
+	          <a href="https://il.linkedin.com/in/julia-sayapina-006b7868" target="blank"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Logos-Linkedin-icon.png" alt="Li"></a>
+	        </li>
+	        <li class="col-sm-1">
+	          <a href="https://github.com/jsay-api" target="blank"><img src={% static "img/git.png" %} alt="Git"></a>
+	        </li>
+	        <li class="col-sm-1">
+	          <a href="https://www.facebook.com/julia.sayapina" target="blank"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Logos-Facebook-icon.png" alt="Fb"></a>
+	        </li>
+	        <li class="col-sm-1">
+	          <a href="https://plus.google.com/u/0/+JuliyaSayapina/about" target="blank"><img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Logos-Google-Plus-icon.png" alt="G+"></a>
+	        </li>
+	      </ul>
+	    </div>
+  	</footer>
+  	<script src="https://s3.amazonaws.com/codecademy-content/projects/jquery.min.js"></script>
+  	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	{% block js %} {% endblock %}
+    <script src={% static "js/script.js" %} ></script>
+</body>
+</html>

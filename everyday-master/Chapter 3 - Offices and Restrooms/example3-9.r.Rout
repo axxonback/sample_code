@@ -1,0 +1,44 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R是自由软件，不带任何担保。
+在某些条件下你可以将其自由散布。
+用'license()'或'licence()'来看散布的详细条件。
+
+R是个合作计划，有许多人为之做出了贡献.
+用'contributors()'来看合作者的详细情况
+用'citation()'会告诉你如何在出版物中正确地引用R或R程序包。
+
+用'demo()'来看一些示范程序，用'help()'来阅读在线帮助文件，或
+用'help.start()'通过HTML浏览器来看帮助文件。
+用'q()'退出R.
+
+[原来保存的工作空间已还原]
+
+> library(ggplot2)
+> 
+> data <- read.table("simulation2.csv", header=TRUE, sep=",")
+> df <- data.frame(table(data$X19))
+> colnames(df) <- c("queue_size", "frequency")
+> percent_labels <- paste(df$frequency, '(', round(df$frequency*100/540, 2), '%)')
+> 
+> ggplot(data=df) + theme(legend.position = "none") + scale_fill_grey(start = 0.6, end = 0.8) +  
++   geom_bar(aes(x = queue_size, y = frequency, fill = factor(queue_size)), stat="identity") +
++   geom_text(aes(x = queue_size, y = frequency, label = percent_labels, size=1)) +
++   scale_y_continuous("frequency") +
++   scale_x_discrete("queue size")
+> 
+> ggsave("figure3-6.pdf")
+Saving 7 x 7 in image
+> print(df)
+  queue_size frequency
+1          0       535
+2          1         2
+3          2         2
+4          3         1
+> 
+> proc.time()
+用户 系统 流逝 
+2.71 0.42 3.11 

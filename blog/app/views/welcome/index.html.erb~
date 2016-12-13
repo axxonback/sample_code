@@ -1,0 +1,14 @@
+
+<h1>Welcome#index#Rails</h1>
+
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<%= form_tag do %>
+	Form contents
+<% end %>
+
+<%= link_to 'My Blog', controller: 'products'%>
+
+<%= link_to 'My Books', controller: 'books'%>
+
+

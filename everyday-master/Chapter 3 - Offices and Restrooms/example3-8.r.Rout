@@ -1,0 +1,75 @@
+
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R是自由软件，不带任何担保。
+在某些条件下你可以将其自由散布。
+用'license()'或'licence()'来看散布的详细条件。
+
+R是个合作计划，有许多人为之做出了贡献.
+用'contributors()'来看合作者的详细情况
+用'citation()'会告诉你如何在出版物中正确地引用R或R程序包。
+
+用'demo()'来看一些示范程序，用'help()'来阅读在线帮助文件，或
+用'help.start()'通过HTML浏览器来看帮助文件。
+用'q()'退出R.
+
+[原来保存的工作空间已还原]
+
+> library(ggplot2)
+> 
+> data <- read.table("simulation2.csv", header = TRUE, sep = ",")
+> mean <- colMeans(data)
+> median <- apply(data, 2, median)
+> max  <- apply(data, 2, max)
+> df <- data.frame(population = seq(from = 1, to = 30), mean = mean, median = median, max = max)
+> 
+> ggplot(data  =  df) + scale_shape_manual(name = "Type", values=c(2,3,4)) + 
++   geom_smooth(aes(x = population, y = mean)) +
++   geom_point(aes(x = population, y = mean, shape = "mean")) +
++   geom_smooth(aes(x = population, y = median)) +
++   geom_point(aes(x = population, y = median, shape = "median")) +  
++   geom_smooth(aes(x = population, y = max)) +
++   geom_point(aes(x = population, y = max, shape = "max")) +
++   scale_y_continuous("queue size") +
++   scale_x_continuous("number of facilities in a restroom")
+>   
+> ggsave("figure3-5.pdf")
+Saving 7 x 7 in image
+> print(df)
+    population         mean median max
+X1           1 6.292019e+02  714.0 872
+X2           2 5.569019e+02  654.5 768
+X3           3 4.972426e+02  567.5 696
+X4           4 4.304389e+02  496.0 621
+X5           5 3.610667e+02  397.0 518
+X6           6 3.014315e+02  336.5 426
+X7           7 2.560148e+02  292.0 359
+X8           8 1.868111e+02  215.0 271
+X9           9 1.074648e+02  126.5 185
+X10         10 5.187222e+01   57.5 122
+X11         11 2.208519e+01   23.0  63
+X12         12 2.546296e+00    1.0  18
+X13         13 9.000000e-01    0.0  11
+X14         14 4.944444e-01    0.0   8
+X15         15 3.185185e-01    0.0   9
+X16         16 5.000000e-02    0.0   3
+X17         17 8.703704e-02    0.0   5
+X18         18 5.925926e-02    0.0   5
+X19         19 1.666667e-02    0.0   3
+X20         20 1.481481e-02    0.0   4
+X21         21 1.851852e-03    0.0   1
+X22         22 3.703704e-03    0.0   2
+X23         23 3.703704e-03    0.0   2
+X24         24 0.000000e+00    0.0   0
+X25         25 0.000000e+00    0.0   0
+X26         26 0.000000e+00    0.0   0
+X27         27 0.000000e+00    0.0   0
+X28         28 0.000000e+00    0.0   0
+X29         29 0.000000e+00    0.0   0
+X30         30 0.000000e+00    0.0   0
+> 
+> proc.time()
+用户 系统 流逝 
+3.95 0.37 4.29 

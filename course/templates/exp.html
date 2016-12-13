@@ -1,0 +1,44 @@
+{% extends 'base.html' %} 
+{% load staticfiles%}
+
+{% block title %}
+		<title>Experience</title>
+	{% endblock %}
+
+	{% block caption %}
+		<h1 class="col-sm-8">Experience</h1>
+	{% endblock %}
+
+	{% block menu2 %}disabled{% endblock %}
+
+
+
+	{% block content %}
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8 ">
+				<hr>
+				<span>
+					{% csrf_token %}
+					<input type="checkbox" name="latest_first" value="sort" onclick="on_check(this)" /> Show last 3
+				</span>
+				<div id="latest_first">
+				{% block jobs %}
+					{% include 'inc_jobs.html' %}
+				{% endblock %}
+				
+				</div>
+				<hr>
+				</div>
+				
+				<!-- </div> -->
+				<div class="col-md-2">
+				</div>
+			</div>
+		</div>
+	{% block js %} 
+		<script type="text/javascript" src ={% static "js/script-exp.js" %}></script>
+	{% endblock %}
+	{% endblock %}

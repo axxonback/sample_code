@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+	{% block title %}
+		<title>Contacts</title>
+	{% endblock %}
+
+	{% block caption %}
+		<h1 class="col-sm-8">500</h1>
+	{% endblock %}
+
+	{% block content %}
+	<section class="jumbotron">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="fourzerofour">5<img src={% static "img/supernova.png" %} alt="0"><img src={% static "img/supernova.png" %} alt="0"></h2>
+					<p>Something went wrong :( we are on our way to fix that!</p>
+					<p>500. Internal server error. We are out of drinks :D</p>
+				</div>
+			</div>
+		</section>
+	{% endblock %}

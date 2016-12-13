@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+	{% block title %}
+		<title>Portfolio</title>
+	{% endblock %}
+
+	{% block caption %}
+		<h1 class="col-sm-8">Projects</h1>
+	{% endblock %}
+
+	{% block menu1 %}disabled{% endblock %}
+
+	{% block content %}
+		<div class="container-fluid contacto">
+			<div id="main">
+				<div class="inner">
+					<section class="tiles">
+					
+					{% for p in prs %}
+						<article class="{{p.style}}">
+							<span class="image">
+								<img src="{{p.img}}" alt="{{p.name}}" />
+							</span>
+							<a href="{{p.site}}" target="blank">
+								<h2 class="port">{{p.name}}</h2>
+								<div class="content">
+									<p>{{p.desc}}</p>
+								</div>
+							</a>
+						</article>
+					{% endfor %}
+
+					</section>
+				</div>
+			</div>
+		</div>
+
+	{% endblock %}
+
+{% block js%}
+	<script src={% static "assets/js/jquery.min.js" %}></script>
+	<script src={% static "assets/js/skel.min.js" %}></script>
+	<script src={% static "assets/js/util.min.js" %}></script>
+	<!--[if lte IE 8]><script src="{% static "assets/js/ie/respond.min.js" %}"></script><![endif]-->
+	<script src={% static "assets/js/main.js" %}></script>
+{% endblock %}

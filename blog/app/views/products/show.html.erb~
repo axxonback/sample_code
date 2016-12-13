@@ -1,0 +1,31 @@
+<p>
+	<strong>Title:</strong>
+	<%= @product.title %>
+</p>
+
+<p>
+	<strong>Text:</strong>
+	<%= @product.text %>
+</p>
+
+<h2>Comments</h2>
+<%= render @product.comments %>
+
+
+<h2>Add a comment:</h2>
+<%= form_for([@product, @product.comments.build]) do |p| %>
+	<p>
+		<%= p.label :commenter %><br>
+		<%= p.text_field :commenter %>
+	</p>
+	<p>
+		<%= p.label :body %><br>
+		<%= p.text_area :body %>
+	</p>
+	<p>
+		<%= p.submit %>
+	</p>
+<% end %>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

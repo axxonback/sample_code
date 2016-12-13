@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+{% block title %}
+		<title>Contacts</title>
+	{% endblock %}
+
+	{% block caption %}
+		<h1 class="col-sm-8">Contacts</h1>
+	{% endblock %}
+
+	{% block menu3 %}disabled{% endblock %}
+
+	{% block content %}
+		
+		<div class="container-fluid contacto">
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				<hr>
+					<div class="media">
+						<div class="media-left media-middle">
+						
+						  <img class="media-object contact" src={% static "img/email.png" %} alt="email">
+						
+						</div>
+						<div class="media-body contacttext">
+						julia.sayapina@icloud.com
+						</div>
+						</div>
+					<div class="media">
+						<div class="media-left media-middle">
+						
+						  <img class="media-object contact" src={% static "img/pin.png" %} alt="map">
+						
+						</div>
+						<div class="media-body contacttext">
+						Be'er-Sheva, Israel
+						</div>
+						</div>
+					<div class="media">
+						<div class="media-left media-middle">
+						
+						  <img class="media-object contact" src="http://icons.iconarchive.com/icons/icons8/ios7/256/Logos-Skype-Copyrighted-icon.png" alt="map">
+						
+						</div>
+						<div class="media-body contacttext">
+						julia.sayapina
+						</div>
+					</div>
+					<div class="media">
+						<div class="media-left media-middle">
+						<a href="{% static "img/CV_Julia_Sayapina.pdf" %}" target="blank">
+						  <img class="media-object contact" src="/static/img/pdf.png" alt="pdf">
+						</a>
+						</div>
+						<div class="media-body contacttext">
+						<a href="{% static "img/CV_Julia_Sayapina.pdf" %}" target="blank">Download CV as a .pdf</a>
+						</div>
+					</div>
+					
+				<hr>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+
+	{% endblock %}

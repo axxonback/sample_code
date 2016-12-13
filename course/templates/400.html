@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles%}
+
+  {% block title %}
+    <title>400</title>
+  {% endblock %}
+
+  {% block caption %}
+    <h1 class="col-sm-8">400</h1>
+  {% endblock %}
+
+  {% block content %}
+  <section class="jumbotron">
+      <div class="container">
+        <div class="row text-center">
+          <h2 class="fourzerofour">4<img src={% static "img/supernova.png" %} alt="0"><img src={% static "img/supernova.png" %} alt="0"></h2>
+          <p>Something went wrong :( we are on our way to fix that!</p>
+          <p>400. Bad request, we don't serve drinks here :D</p>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
