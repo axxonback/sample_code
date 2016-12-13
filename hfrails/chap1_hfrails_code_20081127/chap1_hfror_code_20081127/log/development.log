@@ -1,0 +1,992 @@
+  [4;36;1mSQL (0.000503)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000293)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002573)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002358)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000592)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000220)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTickets (20081126192556)
+  [4;36;1mSQL (0.002332)[0m   [0;1mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "seat_id_seq" varchar(255), "address" text, "price_paid" decimal, "email_address" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.001858)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081126192556')[0m
+  [4;36;1mSQL (0.000363)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000218)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000290)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000072)[0m   [0mPRAGMA index_list("tickets")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-26 19:30:03) [GET]
+  Session ID: 1e5919f2ac87bf5f76a76ca79730646e
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-26 20:30:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-26 21:30:03) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-27 10:30:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-27 11:30:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 11:53:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000624)[0m   [0;1mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.01246 (80 reqs/sec) | Rendering: 0.00463 (37%) | DB: 0.00062 (5%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 11:54:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--4a3397d6a9e9f5d5a79d8ce1a1c0e3bfd220dd4e
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.00996 (100 reqs/sec) | Rendering: 0.00488 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#create (for 127.0.0.1 at 2008-11-27 11:55:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "price_paid"=>"60", "address"=>"37 Newbury Road,\r\nAshfield,\r\nMA", "email_address"=>"alan@shangalang.com"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"tickets"}
+  [4;35;1mTicket Create (0.000673)[0m   [0mINSERT INTO "tickets" ("name", "updated_at", "seat_id_seq", "price_paid", "address", "email_address", "created_at") VALUES('Alan Longmuir', '2008-11-27 11:55:07', '1A', 60.0, '37 Newbury Road,
+Ashfield,
+MA', 'alan@shangalang.com', '2008-11-27 11:55:07')[0m
+Redirected to http://localhost:3000/tickets/1
+Completed in 0.02768 (36 reqs/sec) | DB: 0.00067 (2%) | 302 Found [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 11:55:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--25ba29e187e2672bbce8e252c97cd1c51a073822
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000238)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.02470 (40 reqs/sec) | Rendering: 0.01899 (76%) | DB: 0.00024 (0%) | 200 OK [http://localhost/tickets/1]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 11:55:10) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1754642cb77f86ec5adf3a6363f687c825e56e35
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000425)[0m   [0mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.00756 (132 reqs/sec) | Rendering: 0.00305 (40%) | DB: 0.00042 (5%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 11:55:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000408)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00734 (136 reqs/sec) | Rendering: 0.00154 (21%) | DB: 0.00041 (5%) | 200 OK [http://localhost/tickets/1]
+
+
+Processing TicketsController#edit (for 127.0.0.1 at 2008-11-27 11:55:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000250)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/edit
+Completed in 0.01048 (95 reqs/sec) | Rendering: 0.00476 (45%) | DB: 0.00025 (2%) | 200 OK [http://localhost/tickets/1/edit]
+
+
+Processing TicketsController#update (for 127.0.0.1 at 2008-11-27 11:55:40) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Update", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "price_paid"=>"60.00", "address"=>"37 Newbury Road,\r\nAshfield,\r\nMA", "email_address"=>"alan@shangalang.com"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000274)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Redirected to http://localhost:3000/tickets/1
+Completed in 0.00745 (134 reqs/sec) | DB: 0.00027 (3%) | 302 Found [http://localhost/tickets/1]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 11:55:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7B0Y=--7972f6aafe27b71acff63756c3e0c26cefd8bc15
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000254)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00718 (139 reqs/sec) | Rendering: 0.00157 (21%) | DB: 0.00025 (3%) | 200 OK [http://localhost/tickets/1]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 11:55:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7B1Q=--5bbd96b18c3bd15fc6ed6ecbb69f714e547fbf1d
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000429)[0m   [0;1mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.00751 (133 reqs/sec) | Rendering: 0.00292 (38%) | DB: 0.00043 (5%) | 200 OK [http://localhost/tickets]
+  [4;36;1mSQL (0.000483)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000189)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTickets (20081126192556)
+Migrating to AddPhoneToTickets (20081127120826)
+  [4;36;1mSQL (0.000114)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002677)[0m   [0mALTER TABLE "tickets" ADD "phone" varchar(255)[0m
+  [4;36;1mSQL (0.007001)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.005497)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081127120826')[0m
+  [4;36;1mSQL (0.000372)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000211)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000215)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000051)[0m   [0mPRAGMA index_list("tickets")[0m
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 12:20:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000731)[0m   [0mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.01288 (77 reqs/sec) | Rendering: 0.00779 (60%) | DB: 0.00073 (5%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 12:20:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.02573 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#edit (for 127.0.0.1 at 2008-11-27 12:21:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000248)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/edit
+Completed in 0.02684 (37 reqs/sec) | Rendering: 0.02150 (80%) | DB: 0.00025 (0%) | 200 OK [http://localhost/tickets/1/edit]
+
+
+Processing TicketsController#update (for 127.0.0.1 at 2008-11-27 12:21:48) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Update", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "price_paid"=>"60", "phone"=>"555-267-0488", "address"=>"37 Newbury Road,\r\nAshfield,\r\nMA", "email_address"=>"alan@shangalang.com"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "_method"=>"put", "action"=>"update", "id"=>"1", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000245)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+  [4;36;1mTicket Update (0.000275)[0m   [0;1mUPDATE "tickets" SET "phone" = '555-267-0488', "updated_at" = '2008-11-27 12:21:48' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/tickets/1
+Completed in 0.01191 (83 reqs/sec) | DB: 0.00052 (4%) | 302 Found [http://localhost/tickets/1]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 12:21:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7B0Y=--7972f6aafe27b71acff63756c3e0c26cefd8bc15
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000295)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 1) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.01561 (64 reqs/sec) | Rendering: 0.00981 (62%) | DB: 0.00029 (1%) | 200 OK [http://localhost/tickets/1]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 12:21:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSB1cGRhdGVk
+LgY6CkB1c2VkewY7B1Q=--5bbd96b18c3bd15fc6ed6ecbb69f714e547fbf1d
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000464)[0m   [0;1mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.07191 (13 reqs/sec) | Rendering: 0.06714 (93%) | DB: 0.00046 (0%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 12:22:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.00816 (122 reqs/sec) | Rendering: 0.00293 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#create (for 127.0.0.1 at 2008-11-27 12:23:32) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "ticket"=>{"name"=>"Gordon Clark", "seat_id_seq"=>"43G", "price_paid"=>"35", "phone"=>"555-547-1130", "address"=>"17 Tudor Street,\r\nCambridge,\r\nMA", "email_address"=>"gclark@rollermail.com"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"tickets"}
+  [4;35;1mTicket Create (0.000328)[0m   [0mINSERT INTO "tickets" ("name", "updated_at", "seat_id_seq", "price_paid", "phone", "address", "email_address", "created_at") VALUES('Gordon Clark', '2008-11-27 12:23:32', '43G', 35.0, '555-547-1130', '17 Tudor Street,
+Cambridge,
+MA', 'gclark@rollermail.com', '2008-11-27 12:23:32')[0m
+Redirected to http://localhost:3000/tickets/2
+Completed in 0.01244 (80 reqs/sec) | DB: 0.00033 (2%) | 302 Found [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 12:23:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--25ba29e187e2672bbce8e252c97cd1c51a073822
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000250)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 2) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00756 (132 reqs/sec) | Rendering: 0.00168 (22%) | DB: 0.00025 (3%) | 200 OK [http://localhost/tickets/2]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 12:23:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1754642cb77f86ec5adf3a6363f687c825e56e35
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000538)[0m   [0mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.00808 (123 reqs/sec) | Rendering: 0.00347 (42%) | DB: 0.00054 (6%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 12:23:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.00807 (123 reqs/sec) | Rendering: 0.00288 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#create (for 127.0.0.1 at 2008-11-27 12:24:23) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "ticket"=>{"name"=>"Bobbi Lyall", "seat_id_seq"=>"54C", "price_paid"=>"43", "phone"=>"555-437-6338", "address"=>"9 Main Street,\r\nProvincetown,\r\nRI", "email_address"=>"blyall@baycity.org"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"tickets"}
+  [4;36;1mTicket Create (0.000585)[0m   [0;1mINSERT INTO "tickets" ("name", "updated_at", "seat_id_seq", "price_paid", "phone", "address", "email_address", "created_at") VALUES('Bobbi Lyall', '2008-11-27 12:24:23', '54C', 43.0, '555-437-6338', '9 Main Street,
+Provincetown,
+RI', 'blyall@baycity.org', '2008-11-27 12:24:23')[0m
+Redirected to http://localhost:3000/tickets/3
+Completed in 0.01328 (75 reqs/sec) | DB: 0.00059 (4%) | 302 Found [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 12:24:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--25ba29e187e2672bbce8e252c97cd1c51a073822
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000603)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 3) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00806 (124 reqs/sec) | Rendering: 0.00167 (20%) | DB: 0.00060 (7%) | 200 OK [http://localhost/tickets/3]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 12:24:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1754642cb77f86ec5adf3a6363f687c825e56e35
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000656)[0m   [0;1mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.00839 (119 reqs/sec) | Rendering: 0.00347 (41%) | DB: 0.00066 (7%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 12:24:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.07332 (13 reqs/sec) | Rendering: 0.00300 (4%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#create (for 127.0.0.1 at 2008-11-27 12:25:07) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "ticket"=>{"name"=>"Eric Manclark", "seat_id_seq"=>"7H", "price_paid"=>"37", "phone"=>"555-227-9990", "address"=>"1326 Mass Ave,\r\nCambridge,\r\nMA", "email_address"=>"eric@mananamail.org"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"tickets"}
+  [4;35;1mTicket Create (0.000344)[0m   [0mINSERT INTO "tickets" ("name", "updated_at", "seat_id_seq", "price_paid", "phone", "address", "email_address", "created_at") VALUES('Eric Manclark', '2008-11-27 12:25:07', '7H', 37.0, '555-227-9990', '1326 Mass Ave,
+Cambridge,
+MA', 'eric@mananamail.org', '2008-11-27 12:25:07')[0m
+Redirected to http://localhost:3000/tickets/4
+Completed in 0.01286 (77 reqs/sec) | DB: 0.00034 (2%) | 302 Found [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 12:25:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--25ba29e187e2672bbce8e252c97cd1c51a073822
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"tickets"}
+  [4;36;1mTicket Load (0.000271)[0m   [0;1mSELECT * FROM "tickets" WHERE ("tickets"."id" = 4) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00747 (133 reqs/sec) | Rendering: 0.00168 (22%) | DB: 0.00027 (3%) | 200 OK [http://localhost/tickets/4]
+
+
+Processing TicketsController#index (for 127.0.0.1 at 2008-11-27 12:25:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1754642cb77f86ec5adf3a6363f687c825e56e35
+  Parameters: {"action"=>"index", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000750)[0m   [0mSELECT * FROM "tickets" [0m
+Rendering template within layouts/tickets
+Rendering tickets/index
+Completed in 0.00884 (113 reqs/sec) | Rendering: 0.00394 (44%) | DB: 0.00075 (8%) | 200 OK [http://localhost/tickets]
+
+
+Processing TicketsController#new (for 127.0.0.1 at 2008-11-27 12:25:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"tickets"}
+Rendering template within layouts/tickets
+Rendering tickets/new
+Completed in 0.00881 (113 reqs/sec) | Rendering: 0.00300 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/tickets/new]
+
+
+Processing TicketsController#create (for 127.0.0.1 at 2008-11-27 12:25:42) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "ticket"=>{"name"=>"Nelly Henderson", "seat_id_seq"=>"88J", "price_paid"=>"64", "phone"=>"555-747-1877", "address"=>"665 Tremont St,\r\nBoston,\r\nMA", "email_address"=>"nelly@byebyebaby.com"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"tickets"}
+  [4;36;1mTicket Create (0.000340)[0m   [0;1mINSERT INTO "tickets" ("name", "updated_at", "seat_id_seq", "price_paid", "phone", "address", "email_address", "created_at") VALUES('Nelly Henderson', '2008-11-27 12:25:42', '88J', 64.0, '555-747-1877', '665 Tremont St,
+Boston,
+MA', 'nelly@byebyebaby.com', '2008-11-27 12:25:42')[0m
+Redirected to http://localhost:3000/tickets/5
+Completed in 0.01211 (82 reqs/sec) | DB: 0.00034 (2%) | 302 Found [http://localhost/tickets]
+
+
+Processing TicketsController#show (for 127.0.0.1 at 2008-11-27 12:25:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B0Y=--25ba29e187e2672bbce8e252c97cd1c51a073822
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"tickets"}
+  [4;35;1mTicket Load (0.000246)[0m   [0mSELECT * FROM "tickets" WHERE ("tickets"."id" = 5) [0m
+Rendering template within layouts/tickets
+Rendering tickets/show
+Completed in 0.00752 (133 reqs/sec) | Rendering: 0.00167 (22%) | DB: 0.00025 (3%) | 200 OK [http://localhost/tickets/5]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-27 12:31:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiVUaWNrZXQgd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVk
+LgY6CkB1c2VkewY7B1Q=--1754642cb77f86ec5adf3a6363f687c825e56e35
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+  [4;36;1mSQL (0.000442)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000407)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTickets (20081126192556)
+Migrating to AddPhoneToTickets (20081127120826)
+Migrating to CreateEvents (20081127131431)
+  [4;36;1mSQL (0.000158)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002351)[0m   [0mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "artist" varchar(255), "description" text, "price_low" decimal, "price_high" decimal, "event_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.002196)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081127131431')[0m
+  [4;35;1mSQL (0.000466)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000744)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001277)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mPRAGMA index_list("events")[0m
+  [4;35;1mSQL (0.000051)[0m   [0mPRAGMA index_list("tickets")[0m
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:17:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;36;1mEvent Load (0.000311)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.04200 (23 reqs/sec) | Rendering: 0.03732 (88%) | DB: 0.00031 (0%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2008-11-27 13:17:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"events"}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.09313 (10 reqs/sec) | Rendering: 0.08768 (94%) | DB: 0.00000 (0%) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2008-11-27 13:18:09) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "event"=>{"artist"=>"Lyle Lovett", "price_low"=>"51", "price_high"=>"81", "description"=>"American singer-songwriter and actor.", "event_date(1i)"=>"2009", "event_date(2i)"=>"10", "event_date(3i)"=>"22"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"events"}
+  [4;35;1mEvent Create (0.000318)[0m   [0mINSERT INTO "events" ("artist", "price_low", "updated_at", "price_high", "description", "event_date", "created_at") VALUES('Lyle Lovett', 51.0, '2008-11-27 13:18:09', 81.0, 'American singer-songwriter and actor.', '2009-10-22', '2008-11-27 13:18:09')[0m
+Redirected to http://localhost:3000/events/1
+Completed in 0.01286 (77 reqs/sec) | DB: 0.00032 (2%) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2008-11-27 13:18:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--201cb16aeb7df55d6ea75d6e356467ad49d99439
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"events"}
+  [4;36;1mEvent Load (0.000245)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 1) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 0.31036 (3 reqs/sec) | Rendering: 0.30418 (98%) | DB: 0.00024 (0%) | 200 OK [http://localhost/events/1]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:18:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--2f167c5885ea41ad9fa05d1efaa644a95fc7daec
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000512)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.00759 (131 reqs/sec) | Rendering: 0.00303 (39%) | DB: 0.00051 (6%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2008-11-27 13:18:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"events"}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.00905 (110 reqs/sec) | Rendering: 0.00394 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2008-11-27 13:18:50) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "event"=>{"artist"=>"Trey Anastasio", "price_low"=>"25", "price_high"=>"124", "description"=>"American guitarist, composer, and vocalist from the band Phish.", "event_date(1i)"=>"2009", "event_date(2i)"=>"10", "event_date(3i)"=>"23"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"events"}
+  [4;36;1mEvent Create (0.000643)[0m   [0;1mINSERT INTO "events" ("artist", "price_low", "updated_at", "price_high", "description", "event_date", "created_at") VALUES('Trey Anastasio', 25.0, '2008-11-27 13:18:50', 124.0, 'American guitarist, composer, and vocalist from the band Phish.', '2009-10-23', '2008-11-27 13:18:50')[0m
+Redirected to http://localhost:3000/events/2
+Completed in 0.07581 (13 reqs/sec) | DB: 0.00064 (0%) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2008-11-27 13:18:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--201cb16aeb7df55d6ea75d6e356467ad49d99439
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000243)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 2) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 0.00758 (131 reqs/sec) | Rendering: 0.00181 (23%) | DB: 0.00024 (3%) | 200 OK [http://localhost/events/2]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:18:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--2f167c5885ea41ad9fa05d1efaa644a95fc7daec
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;36;1mEvent Load (0.000542)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.00805 (124 reqs/sec) | Rendering: 0.00339 (42%) | DB: 0.00054 (6%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2008-11-27 13:18:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"events"}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.00906 (110 reqs/sec) | Rendering: 0.00391 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2008-11-27 13:19:27) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "event"=>{"artist"=>"Great Big Sea", "price_low"=>"46", "price_high"=>"77", "description"=>"Canadian folk-rock band from Newfoundland and Labrador.", "event_date(1i)"=>"2008", "event_date(2i)"=>"10", "event_date(3i)"=>"24"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"events"}
+  [4;35;1mEvent Create (0.000382)[0m   [0mINSERT INTO "events" ("artist", "price_low", "updated_at", "price_high", "description", "event_date", "created_at") VALUES('Great Big Sea', 46.0, '2008-11-27 13:19:27', 77.0, 'Canadian folk-rock band from Newfoundland and Labrador.', '2008-10-24', '2008-11-27 13:19:27')[0m
+Redirected to http://localhost:3000/events/3
+Completed in 0.01208 (82 reqs/sec) | DB: 0.00038 (3%) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2008-11-27 13:19:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--201cb16aeb7df55d6ea75d6e356467ad49d99439
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"events"}
+  [4;36;1mEvent Load (0.000242)[0m   [0;1mSELECT * FROM "events" WHERE ("events"."id" = 3) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 0.00830 (120 reqs/sec) | Rendering: 0.00211 (25%) | DB: 0.00024 (2%) | 200 OK [http://localhost/events/3]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:19:30) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--2f167c5885ea41ad9fa05d1efaa644a95fc7daec
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000642)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.01034 (96 reqs/sec) | Rendering: 0.00522 (50%) | DB: 0.00064 (6%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2008-11-27 13:19:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"events"}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.00931 (107 reqs/sec) | Rendering: 0.00409 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/events/new]
+
+
+Processing EventsController#create (for 127.0.0.1 at 2008-11-27 13:20:13) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"commit"=>"Create", "event"=>{"artist"=>"Boston Symphony Orchestra", "price_low"=>"29", "price_high"=>"105", "description"=>"American orchestra, based at Symphony Hall in Boston, Massachusetts.", "event_date(1i)"=>"2009", "event_date(2i)"=>"10", "event_date(3i)"=>"25"}, "authenticity_token"=>"850684b9e57d3a36632d61397000c7997b1ca4b9", "action"=>"create", "controller"=>"events"}
+  [4;36;1mEvent Create (0.000413)[0m   [0;1mINSERT INTO "events" ("artist", "price_low", "updated_at", "price_high", "description", "event_date", "created_at") VALUES('Boston Symphony Orchestra', 29.0, '2008-11-27 13:20:13', 105.0, 'American orchestra, based at Symphony Hall in Boston, Massachusetts.', '2009-10-25', '2008-11-27 13:20:13')[0m
+Redirected to http://localhost:3000/events/4
+Completed in 0.01200 (83 reqs/sec) | DB: 0.00041 (3%) | 302 Found [http://localhost/events]
+
+
+Processing EventsController#show (for 127.0.0.1 at 2008-11-27 13:20:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--201cb16aeb7df55d6ea75d6e356467ad49d99439
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000241)[0m   [0mSELECT * FROM "events" WHERE ("events"."id" = 4) [0m
+Rendering template within layouts/events
+Rendering events/show
+Completed in 0.00738 (135 reqs/sec) | Rendering: 0.00180 (24%) | DB: 0.00024 (3%) | 200 OK [http://localhost/events/4]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:20:15) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRFdmVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--2f167c5885ea41ad9fa05d1efaa644a95fc7daec
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;36;1mEvent Load (0.000767)[0m   [0;1mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.00941 (106 reqs/sec) | Rendering: 0.00443 (47%) | DB: 0.00077 (8%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#index (for 127.0.0.1 at 2008-11-27 13:30:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"index", "controller"=>"events"}
+  [4;35;1mEvent Load (0.000784)[0m   [0mSELECT * FROM "events" [0m
+Rendering template within layouts/events
+Rendering events/index
+Completed in 0.01028 (97 reqs/sec) | Rendering: 0.00413 (40%) | DB: 0.00078 (7%) | 200 OK [http://localhost/events]
+
+
+Processing EventsController#new (for 127.0.0.1 at 2008-11-27 13:30:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {"action"=>"new", "controller"=>"events"}
+Rendering template within layouts/events
+Rendering events/new
+Completed in 0.03385 (29 reqs/sec) | Rendering: 0.02873 (84%) | DB: 0.00000 (0%) | 200 OK [http://localhost/events/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-27 13:31:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlYTY1NWE4NjQ0ZTM3Yzc5MGM2Nzg4NDkwYWE3MjRk
+MDkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f937553340033b9a9170ee3d9340de85a3ce8968
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/incidents/news.xml" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/routing/route_set.rb:385:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
